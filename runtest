@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if docker-compose up --build -V --exit-code-from testcbox ; then
+  R=$?
+  echo SUCCESS
+else
+  R=$?
+  echo FAILURE
+fi
+
+docker-compose down -v
+exit $R

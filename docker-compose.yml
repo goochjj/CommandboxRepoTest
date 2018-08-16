@@ -1,0 +1,9 @@
+version: '2.2'
+services:
+  testcbox:
+    build: .
+    init: true
+    container_name: cbox-repo-test
+    network_mode: bridge
+    environment:
+      - REPOBASE=http://downloads.ortussolutions.com/debs-be
